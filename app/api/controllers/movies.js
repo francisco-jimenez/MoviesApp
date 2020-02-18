@@ -51,7 +51,7 @@ deleteById: function(req, res, next) {
 create: function(req, res, next) {
   movieModel.create({ 
             name: req.body.name,
-            released_on: req.body.released_on,
+            released_date: req.body.released_date,
             director : movie.director,
             score: movie.score,
             plot_description: movie.plot_description,
