@@ -19,7 +19,7 @@ movieModel.find({}, function(err, movies){
     for (let movie of movies) {
      moviesList.push({id: movie._id,
                       name: movie.name,
-                      released_on: movie.released_on,
+                      released_date: movie.released_date,
                       director : movie.director,
                       score: movie.score,
                       plot_description: movie.plot_description,
