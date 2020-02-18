@@ -17,7 +17,13 @@ movieModel.find({}, function(err, movies){
     next(err);
    } else{
     for (let movie of movies) {
-     moviesList.push({id: movie._id, name: movie.name, released_on: movie.released_on});
+     moviesList.push({id: movie._id,
+                      name: movie.name,
+                      released_on: movie.released_on,
+                      director : movie.director,
+                      score: movie.score,
+                      plot_description: movie.plot_description,
+                    });
     }
     res.json({status:"success", message: "Movies list found!!!", data:{movies: moviesList}});
        
@@ -43,7 +49,13 @@ deleteById: function(req, res, next) {
   });
  },
 create: function(req, res, next) {
-  movieModel.create({ name: req.body.name, released_on: req.body.released_on }, function (err, result) {
+  movieModel.create({ 
+            name: req.body.name,
+            released_on: req.body.released_on,
+            director : movie.director,
+            score: movie.score,
+            plot_description: movie.plot_description,
+          }, function (err, result) {
       if (err) 
        next(err);
       else
