@@ -52,9 +52,9 @@ create: function(req, res, next) {
   movieModel.create({ 
             name: req.body.name,
             released_date: req.body.released_date,
-            director : movie.director,
-            score: movie.score,
-            plot_description: movie.plot_description,
+            director : req.body.director,
+            score: req.body.score,
+            plot_description: req.body.plot_description,
           }, function (err, result) {
       if (err) 
        next(err);
