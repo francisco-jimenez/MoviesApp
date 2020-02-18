@@ -4,6 +4,7 @@
   "description": "this is a movie app for Ironhack interview",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Francisco Jimenez",
@@ -16,5 +17,8 @@
     "mongoose": "^5.8.11",
     "morgan": "^1.9.1",
     "now": "^17.0.3"
+  },
+  "engines": {
+    "node": "11.x"
   }
 }
