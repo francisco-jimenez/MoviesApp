@@ -15,7 +15,8 @@ module.exports = {
     authenticate: function (req, res, next) {
         userModel.findOne({ email: req.body.email }, function (err, userInfo) {
             if (err) {
-                next(err);
+                res.json({ status: "error", message: "Invalid email/password!!!", data: null });
+                next(err)
             } else {
                 if (bcrypt.compareSync(req.body.password, userInfo.password)) {
                     const token = jwt.sign({ id: userInfo._id }, req.app.get('secretKey'), { expiresIn: '1h' });
