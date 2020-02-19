@@ -26,6 +26,6 @@ module.exports = {
                 }
             }
         });
-        res.json({ status: "error", message: "Invalid email/password!!!", data: null });
+        // res.json({ status: "error", message: "Invalid email/password!!!", data: null });
     },
 }
