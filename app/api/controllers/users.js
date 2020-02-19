@@ -14,7 +14,9 @@ module.exports = {
     },
     authenticate: function (req, res, next) {
         userModel.findOne({ email: req.body.email }, function (err, userInfo) {
-            if (err) {
+            console.log(err, userInfo)
+            if (!userInfo) {
+                console.log('errorrr!')
                 res.json({ status: "error", message: "Invalid email/password!!!", data: null });
                 next(err)
             } else {
