@@ -34,10 +34,10 @@ module.exports = {
   updateById: function (req, res, next) {
     movieModel.findByIdAndUpdate(req.params.movieId, {
       name: req.body.name,
-      released_date: movie.released_date,
-      director: movie.director,
-      score: movie.score,
-      plot_description: movie.plot_description,
+      released_date: req.body.released_date,
+      director: req.body.director,
+      score: req.body.score,
+      plot_description: req.body.plot_description,
     }, function (err, movieInfo) {
       if (err)
         next(err);
