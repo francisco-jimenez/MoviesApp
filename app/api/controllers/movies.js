@@ -31,7 +31,13 @@ movieModel.find({}, function(err, movies){
 });
  },
 updateById: function(req, res, next) {
-  movieModel.findByIdAndUpdate(req.params.movieId,{name:req.body.name}, function(err, movieInfo){
+  movieModel.findByIdAndUpdate(req.params.movieId,{
+                                                    name:req.body.name,
+                                                    released_date: movie.released_date,
+                      director : movie.director,
+                      score: movie.score,
+                      plot_description: movie.plot_description,
+                                                  }, function(err, movieInfo){
 if(err)
     next(err);
    else {
